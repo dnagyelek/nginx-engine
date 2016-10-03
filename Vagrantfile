@@ -14,7 +14,6 @@ Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/trusty64"
     config.vm.network "private_network", ip: "192.168.33.16"
     config.vm.hostname = "easyengine.box"
-    # config.vm.provision :shell, path: "updatephp7.sh"
     config.vm.synced_folder ".", "/var/www",  :mount_options => ["dmode=705", "fmode=604"] 
     
     # config.vm.provision :shell, path: "updatephp7.sh"
