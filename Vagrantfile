@@ -11,15 +11,17 @@ Vagrant.configure("2") do |config|
         v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
-    # config.vm.box = "ubuntu/trusty64" # 14.04
-    config.vm.box = "ubuntu/xenial64" # 16.04
+    # config.vm.box = "bento/ubuntu-14.04" # 14.04
+    # config.vm.box = "ubuntu/trusty64" # 14.04 works
+    
+    # config.vm.box = "ubuntu/xenial64" # 16.04
     # to test next
-    # config.vm.box = " bento/ubuntu-16.04" # 16.04
+    config.vm.box = "bento/ubuntu-16.04" # 16.04
     config.vm.network "private_network", ip: "192.168.33.16"
     config.vm.hostname = "easyengine.box"
     config.vm.synced_folder ".", "/var/www",  :mount_options => ["dmode=705", "fmode=604"] 
     
-    # config.vm.provision :shell, path: File.join( "provision", "provision.sh" ) 
+    config.vm.provision :shell, path: File.join( "provision", "provision.sh" ) 
 
 end
 
