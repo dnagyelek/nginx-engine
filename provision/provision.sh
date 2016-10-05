@@ -18,7 +18,7 @@ sudo ee stack install --wpcli
 
 # install Redis
 sudo ee stack install --redis
-sudo ee stack install --phpredisadmin
+# sudo ee stack install --phpredisadmin
 
 # install Admin Tools
-sudo ee stack install --admin
+# sudo ee stack install --admin
