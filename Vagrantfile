@@ -12,16 +12,20 @@ Vagrant.configure("2") do |config|
   end
 
     # config.vm.box = "bento/ubuntu-14.04" # 14.04
-    # config.vm.box = "ubuntu/trusty64" # 14.04 works
     
-    # config.vm.box = "ubuntu/xenial64" # 16.04
+    config.vm.box = "ubuntu/trusty64" # 14.04 works 100ms+
+    
+    # not vorking wiht the default user / pass
+    # older HHVM 3.11.1
+    # config.vm.box = "ubuntu/xenial64" # 16.04 
+   
     # to test next
-    config.vm.box = "bento/ubuntu-16.04" # 16.04
+    # config.vm.box = "bento/ubuntu-16.04" # 16.04 200ms+
     config.vm.network "private_network", ip: "192.168.33.16"
     config.vm.hostname = "easyengine.box"
     config.vm.synced_folder ".", "/var/www",  :mount_options => ["dmode=705", "fmode=604"] 
     
-    config.vm.provision :shell, path: File.join( "provision", "provision.sh" ) 
+   # config.vm.provision :shell, path: File.join( "provision", "provision.sh" ) 
 
 end
 
