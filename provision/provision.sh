@@ -1,3 +1,9 @@
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo apt-get autoremove
+
 # install the main EasyEngine
 wget -qO ee rt.cx/ee && sudo bash ee
 
