@@ -6,6 +6,8 @@ sudo apt-get upgrade
 
 sudo apt-get autoremove
 
+vagrant box update
+
 # install the main EasyEngine
 wget -qO ee rt.cx/ee && sudo bash ee
 
@@ -45,6 +47,8 @@ sudo ee stack remove --postfix
 # install phpmyadmin
 sudo ee stack install --phpmyadmin
 
+sudo ee site create drigg.box --wpsubdir --wpredis --php7
+
 SSL
 
 sudo openssl genrsa -out "/etc/ssl/drigg.box.key" 2048
@@ -59,3 +63,27 @@ ssl_certificate /etc/ssl/drigg.box.crt;
 ssl_certificate_key /etc/ssl/drigg.box.key;
 
 ex - > https://serversforhackers.com/video/self-signed-ssl-certificates-for-development
+
+server {
+       listen         80;
+       server_name    devly.co www.devly.co;
+       return         301 https://$server_name$request_uri;
+}
+
+
+server {
+        listen 443 ssl http2;
+        server_name devly.co www.devly.co;
+        ssl on;
+        ssl_certificate /var/www/devly.co/cert/ssl-bundle.crt;
+        ssl_certificate_key /var/www/devly.co/cert/devly_co.key;
+        access_log   /var/log/nginx/devly.co.access.log rt_cache;
+        error_log    /var/log/nginx/devly.co.error.log;
+        root /var/www/devly.co/htdocs;
+        index index.php index.htm index.html;
+
+        include common/wpfc.conf;
+        include common/wpcommon.conf;
+        include common/locations.conf;
+
+}
