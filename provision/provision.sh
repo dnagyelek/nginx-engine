@@ -1,9 +1,7 @@
 # to run after vagrant up
 
 sudo apt-get update
-
 sudo apt-get upgrade
-
 sudo apt-get autoremove
 
 vagrant box update
@@ -14,7 +12,7 @@ wget -qO ee rt.cx/ee && sudo bash ee
 # install nginx
 sudo ee stack install --nginx
 
-# install php5
+# install / remove php5
 sudo ee stack install --php
 sudo ee stack purge --php
 sudo ee stack remove --php
@@ -35,9 +33,7 @@ sudo ee stack install --wpcli
 sudo ee stack install --redis
 # sudo ee stack install --phpredisadmin
 
-
-
-Postfix
+# remove Postfix
 sudo ee stack purge --postfix
 sudo ee stack remove --postfix
 
@@ -74,6 +70,7 @@ server {
 server {
         listen 443 ssl http2;
         server_name devly.co www.devly.co;
+
         ssl on;
         ssl_certificate /var/www/devly.co/cert/ssl-bundle.crt;
         ssl_certificate_key /var/www/devly.co/cert/devly_co.key;
