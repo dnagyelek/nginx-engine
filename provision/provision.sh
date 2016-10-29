@@ -85,15 +85,5 @@ server {
 
 }
 
-
-sudo chgrp -R www-data /srv/www/wp-content
-chmod -R g+w /srv/www/wp-content
-
-sudo adduser <username> www-data
-sudo chown -R www-data:www-data /var/www
-sudo chmod -R g+rw /var/www
-
-find /var/www/drigg.box/htdocs -type d -exec chmod g+s {} \;
-chmod g+w /var/www/drigg.box/htdocs/wp-content
-chmod -R g+w /var/www/drigg.box/htdocs/wp-content/themes
-chmod -R g+w /var/www/drigg.box/htdocs/wp-content/plugins
+install gulp locally
+ npm install gulp
