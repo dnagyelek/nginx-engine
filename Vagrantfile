@@ -19,6 +19,8 @@ Vagrant.configure("2") do |config|
     # for Browser Sync
     # config.vm.network :forwarded_port, guest: 3000, host: 3000, auto_correct: true
     # config.vm.network :forwarded_port, guest: 3001, host: 3001, auto_correct: true
+    # config.vm.network :forwarded_port, guest: 22, host: 1234, auto_correct: true
+
 
     config.vm.synced_folder ".", "/var/www",  :mount_options => ["dmode=775", "fmode=664"]
     
