@@ -72,8 +72,8 @@ server {
         server_name devly.co www.devly.co;
 
         ssl on;
-        ssl_certificate /var/www/devly.co/cert/ssl-bundle.crt;
-        ssl_certificate_key /var/www/devly.co/cert/devly_co.key;
+        ssl_certificate /etc/nginx/cert/devly.co.crt;
+        ssl_certificate_key /etc/nginx/cert/devly.co.key;
         access_log   /var/log/nginx/devly.co.access.log rt_cache;
         error_log    /var/log/nginx/devly.co.error.log;
         root /var/www/devly.co/htdocs;

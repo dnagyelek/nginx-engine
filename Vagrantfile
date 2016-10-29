@@ -20,7 +20,7 @@ Vagrant.configure("2") do |config|
     # config.vm.network :forwarded_port, guest: 3000, host: 3000, auto_correct: true
     # config.vm.network :forwarded_port, guest: 3001, host: 3001, auto_correct: true
 
-    config.vm.synced_folder ".", "/var/www",  :mount_options => ["dmode=755", "fmode=644"]
+    config.vm.synced_folder ".", "/var/www",  :mount_options => ["dmode=775", "fmode=664"]
     
    # config.vm.provision :shell, path: File.join( "provision", "provision.sh" ) 
 
