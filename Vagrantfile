@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     # config.vm.network :forwarded_port, guest: 22, host: 1234, auto_correct: true
 
 
-    config.vm.synced_folder ".", "/var/www",  :mount_options => ["dmode=775", "fmode=664"]
+    config.vm.synced_folder ".", "/var/www",  :mount_options => ["dmode=755", "fmode=644"] , owner: "www-data", group: "www-data"
     
    # config.vm.provision :shell, path: File.join( "provision", "provision.sh" ) 
 
