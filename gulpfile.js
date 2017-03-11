@@ -64,7 +64,7 @@ function init_watch(https, port, proxy) {
     //   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
     //   gulp.watch([path.source + 'images/**/*'], ['images']);
     //   gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
-    gulp.watch('./coachhousegoole.box/htdocs/wp-content/themes/**/*', function () {
+    gulp.watch(['./coachhousegoole.box/htdocs/wp-content/themes/**/*', '!./coachhousegoole.box/htdocs/wp-content/themes/**/*.scss'], function () {
         browserSync.reload();
     });
 }

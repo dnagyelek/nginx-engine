@@ -6,14 +6,14 @@ Vagrant.configure("2") do |config|
     config.vm.provider :virtualbox do |v|
         v.customize ["modifyvm", :id, "--memory", 1024]
         v.customize ["modifyvm", :id, "--cpus", 1]
-        v.customize ["modifyvm", :id, "--name", "drigg.box"]
+        v.customize ["modifyvm", :id, "--name", "coachhousegoole.box"]
         v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
         v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
 
     config.vm.box = "ubuntu/trusty64" #
 
-    config.vm.network "private_network", ip: "192.168.33.16"
+    config.vm.network "private_network", ip: "192.168.33.19"
     config.vm.hostname = "coachhousegoole.box"
 
     # for Browser Sync
