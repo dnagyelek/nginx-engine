@@ -4,12 +4,12 @@
   "description": "my awesome development",
   "main": "gulpfile.js",
   "devDependencies": {
-    "browser-sync": "*",
+    "browser-sync": "^2.18.8",
     "gulp": "^3.9.1",
-    "gulp-imagemin": "*",
-    "gulp-plumber": "*",
-    "gulp-util": "*",
-    "npm": "*"
+    "gulp-imagemin": "^3.1.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-util": "^3.0.8",
+    "npm": "^4.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
