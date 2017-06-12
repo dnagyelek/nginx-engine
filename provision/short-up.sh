@@ -13,6 +13,11 @@ sudo ee stack install --mysql
 sudo ee stack install --wpcli
 sudo ee stack install --phpmyadmin
 
+sudo apt-get install composer -y
+cd /var/www/22222/htdocs/db/pma
+sudo composer install
+sudo chown www-data: * -R
+
 sudo nano /etc/ee/ee.conf
 -->
 [mysql]
@@ -49,4 +54,15 @@ server {
         ssl_certificate /etc/ssl/xxxxx.box.crt;
         ssl_certificate_key /etc/ssl/xxxxx.box.key;
 <--
+
+
+install gulp locally
+npm i -g npm
+npm update -g
+npm outdated
+npm install gulp
+
+npm i -g npm-check-updates
+npm-check-updates -u
+
 
