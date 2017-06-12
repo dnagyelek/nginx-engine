@@ -13,9 +13,12 @@ sudo ee stack install --mysql
 sudo ee stack install --wpcli
 sudo ee stack install --phpmyadmin
 
-sudo apt-get install composer -y
+
+sudo add-apt-repository ppa:nijel/phpmyadmin
+sudo curl -sS https://getcomposer.org/installer | sudo php -- --filename=composer --install-dir=/usr/local/bin
+
 cd /var/www/22222/htdocs/db/pma
-sudo composer install
+sudo composer update
 sudo chown www-data: * -R
 
 sudo nano /etc/ee/ee.conf
