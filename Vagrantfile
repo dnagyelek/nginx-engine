@@ -6,7 +6,7 @@ Vagrant.configure("2") do |config|
     config.vm.provider :virtualbox do |v|
         v.customize ["modifyvm", :id, "--memory", 1024]
         v.customize ["modifyvm", :id, "--cpus", 1]
-        v.customize ["modifyvm", :id, "--name", "coachhousegoole.box"]
+        v.customize ["modifyvm", :id, "--name", "your-expected-site-name.box"]
         v.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
         v.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
   end
@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
     config.vm.box = "ubuntu/trusty64" #
 
     config.vm.network "private_network", ip: "192.168.33.19"
-    config.vm.hostname = "coachhousegoole.box"
+    config.vm.hostname = "your-expected-site-name.box"
 
     # for Browser Sync
     # config.vm.network :forwarded_port, guest: 3000, host: 3000, auto_correct: true
@@ -27,8 +27,3 @@ Vagrant.configure("2") do |config|
    # config.vm.provision :shell, path: File.join( "provision", "provision.sh" ) 
 
 end
-
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   sudo apt-get update
-  #   sudo apt-get install -y apache2
-  # SHELL
