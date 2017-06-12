@@ -9,23 +9,16 @@ require('events').EventEmitter.defaultMaxListeners = Infinity;
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
     plumber = require('gulp-plumber'),
-    imagemin = require('gulp-imagemin');
 
-var images_path = './coachhousegoole.box/htdocs/wp-content/uploads';
+    // your-expected-site-name
+    watch_path = './your-expected-site-name/htdocs/wp-content/',
+    // change site-theme
+    browser_sync = watch_path + 'themes/site-theme/';
+
 
 gulp.task('default', function () {
-    init_watch(true, 3001, {target: 'https://coachhousegoole.box'});
-});
-
-gulp.task('optimize:img', function () {
-    gulp.src(images_path + '**/*.{png,jpg,gif}')
-        .pipe(imagemin({
-            optimizationLevel: 7,
-            progressive: true
-        }))
-        .pipe(gulp.dest(function (file) {
-            return file.base;
-        }));
+    // your-expected-site-name.box
+    init_watch(true, 3001, {target: 'https://your-expected-site-name.box'});
 });
 
 function init_watch(https, port, proxy) {
@@ -59,12 +52,10 @@ function init_watch(https, port, proxy) {
         }
     });
 
-    //   gulp.watch([path.source + 'styles/**/*'], ['styles']);
-    //   gulp.watch([path.source + 'scripts/**/*'], ['jshint', 'scripts']);
-    //   gulp.watch([path.source + 'fonts/**/*'], ['fonts']);
-    //   gulp.watch([path.source + 'images/**/*'], ['images']);
-    //   gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
-    gulp.watch(['./coachhousegoole.box/htdocs/wp-content/themes/**/*', '!./coachhousegoole.box/htdocs/wp-content/themes/**/*.scss'], function () {
+    gulp.watch([browser_sync + '/**/*',
+        // no babysit for minified nor scss
+        '!' + browser_sync + '/**/*.min.css',
+        '!' + browser_sync + '/**/*.scss'], function () {
         browserSync.reload();
     });
 }

@@ -1,6 +1,6 @@
 {
   "name": "drigg-box",
-  "version": "2.0.17",
+  "version": "2.0.19",
   "description": "my awesome development",
   "main": "gulpfile.js",
   "devDependencies": {
