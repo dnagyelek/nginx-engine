@@ -34,6 +34,10 @@ email =
 
 sudo ee site create xxxxx.box --wp --php7
 
+npm install -g gulp
+npm install --save-dev gulp
+npm install browser-sync gulp --save-dev
+
 sudo openssl genrsa -out "/etc/ssl/xxxxx.box.key" 2048
 sudo openssl req -new -key "/etc/ssl/xxxxx.box.key" -out "/etc/ssl/xxxxx.box.csr"
 sudo openssl x509 -req -days 2048 -in "/etc/ssl/xxxxx.box.csr"  -signkey "/etc/ssl/xxxxx.box.key" -out "/etc/ssl/xxxxx.box.crt"
@@ -57,13 +61,6 @@ server {
 <--
 
 
-install gulp locally
-npm i -g npm
-npm update -g
-npm outdated
-npm install gulp
 
-npm i -g npm-check-updates
-npm-check-updates -u
 
 
