@@ -13,7 +13,6 @@ sudo ee stack install --mysql
 sudo ee stack install --wpcli
 sudo ee stack install --phpmyadmin
 
-
 sudo curl -sS https://getcomposer.org/installer | sudo php -- --filename=composer --install-dir=/usr/local/bin
 
 cd /var/www/22222/htdocs/db/pma

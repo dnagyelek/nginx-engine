@@ -8,24 +8,25 @@ require('events').EventEmitter.defaultMaxListeners = Infinity;
 // var $           = require('gulp-load-plugins')();
 var gulp = require('gulp'),
     browserSync = require('browser-sync'),
-    plumber = require('gulp-plumber'),
+  //  plumber = require('gulp-plumber'),
 
     // your-expected-site-name
-    watch_path = './your-expected-site-name/htdocs/wp-content/',
+    watch_path = './deltablinds.box/htdocs/wp-content/',
     // change site-theme
-    browser_sync = watch_path + 'themes/site-theme/';
+    browser_sync = watch_path + 'themes/deltab-linds/';
 
 
 gulp.task('default', function () {
     // your-expected-site-name.box
-    init_watch(true, 3001, {target: 'https://your-expected-site-name.box'});
+    init_watch(false, 3001, {target: 'http://deltablinds.box'});
+    // init_watch(true, 3001, {target: 'https://deltablinds.box'});
 });
 
 function init_watch(https, port, proxy) {
 
     var defaults = {
-        port: 3001
-//        https: true,
+        port: 3001,
+//        https: false,
 //        proxy: config.devUrl // { target: 'http://your-expected-site-name.com' }
     };
 
