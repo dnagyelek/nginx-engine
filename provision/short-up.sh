@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
 
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade
 sudo apt-get autoremove
 
 wget -qO ee rt.cx/ee && sudo bash ee
 
-sudo ee stack install --nginx
-sudo ee stack install --php7
-sudo ee stack install --mysql
-
-sudo ee stack install --wpcli
-sudo ee stack install --phpmyadmin
+sudo ee stack install --nginx --php7 --mysql --wpcli --phpmyadmin
 
 sudo curl -sS https://getcomposer.org/installer | sudo php -- --filename=composer --install-dir=/usr/local/bin
 

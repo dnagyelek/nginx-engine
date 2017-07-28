@@ -22,7 +22,6 @@
   "homepage": "https://github.com/dnagyelek/nginx-engine#readme",
   "devDependencies": {
     "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-plumber": "^1.1.0"
+    "gulp": "^3.9.1"
   }
 }
