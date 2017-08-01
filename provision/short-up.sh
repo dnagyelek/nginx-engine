@@ -28,9 +28,7 @@ email =
 
 sudo ee site create xxxxx.box --wp --php7
 
-npm install -g gulp
-npm install --save-dev gulp
-npm install browser-sync gulp --save-dev
+npm install --save-dev gulp browser-sync
 
 sudo openssl genrsa -out "/etc/ssl/xxxxx.box.key" 2048
 sudo openssl req -new -key "/etc/ssl/xxxxx.box.key" -out "/etc/ssl/xxxxx.box.csr"
